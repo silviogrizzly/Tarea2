@@ -34,3 +34,22 @@ while True:
     if abs(rootValues[-2] - rootValues[-1]) < error:
         break
 a=rootValues[len(rootValues)-1]
+
+#Funcion catenaria original para calcular el largo de la curva
+
+import scipy.integrate as integrate
+
+x_0=10
+
+def F(x):
+    y=a*np.cosh((x-x_0)/a)
+    return y
+def dF(x):
+    y=np.sinh((x-x_0)/a)
+    return y
+def g(x):
+    y=np.sqrt(1+(dF(x))**2)
+    return y
+
+Largo=integrate.quad(lambda x: g(x), 0, 20)
+Largo
