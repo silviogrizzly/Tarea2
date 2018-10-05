@@ -19,3 +19,18 @@ plt.figure(num="Newton")
 plt.plot(x, f(x))
 plt.grid('on')
 plt.show()
+
+#Metodo de Newton
+
+rootValues= [4.0] 
+error = 0.0000001
+rootGuess = rootValues[-1]
+print "%11s %11s" % ("x", "f(x)")
+while True:
+    print "%11.8f %11.8f" % (rootGuess, f(rootGuess))
+    droot = -1*f(rootGuess)/df(rootGuess)
+    rootGuess = rootGuess + droot
+    rootValues.append(rootGuess)
+    if abs(rootValues[-2] - rootValues[-1]) < error:
+        break
+a=rootValues[len(rootValues)-1]
