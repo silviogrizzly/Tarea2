@@ -13,3 +13,9 @@ def df(x):      #Derivada de la funcion f(x)
     y=np.cosh(10/x)-((10/x)*np.sinh(10/x))-1
     return y
 
+
+x = np.linspace(-2,2,100)
+plt.figure(num="Newton")
+plt.plot(x, f(x))
+plt.grid('on')
+plt.show()
